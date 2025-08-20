@@ -137,4 +137,4 @@ __pycache__
 .ipynb_checkpoints
 *.log
 *.code-workspace
-.DS_store
+.DS_Store
