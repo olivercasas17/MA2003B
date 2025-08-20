@@ -1,0 +1,50 @@
+---
+title: "PFAS"
+author: "Casas Pontanillo, Oliver Arturo"
+format: 
+    html:
+        toc: true
+        fontsize: 1.25em
+        html-math-method: katex
+        embed-resources: true
+        self-contained-math: true
+        df-print: kable
+---
+
+## Ejemplo PFAS
+
+Primero importamos las librerias ncesesarias.
+```{python}
+import pandas as pd
+import numpy as np
+import plotly.express as px
+```
+
+```{python}
+pfas_data = pd.read_csv("../data/pfas_data.csv")
+```
+
+```{python}
+pfas_data.head()
+
+pfas_data.info()
+
+pfas_data["RDKIT_SMILES"].isna().mean()
+
+
+```
+
+
+```{python}
+molecules = pfas_data["RDKIT_SMILES"].tolist()
+molecules[:5]
+```
+
+```{python}
+!pip install rdkit -q
+```
+
+```{python}
+from rdkit import Chem
+from rdkit.Chem import AllChem
+```
